@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch The Coin!</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="score-title">Wynik: <span class="score"></span></h1>
+        <div class="clouds">
+            <img src="./clouds.png" class="clouds__img" alt="chmura">
+            <img src="./clouds.png" class="clouds__img clouds__img--small" alt="chmura">
+        </div>
+        <img src="./bush.png" class="bush bush--first" alt="krzew">
+        <img src="./bush.png" class="bush bush--small" alt="krzew">
+        <img src="./bush.png" class="bush bush--last" alt="krzew">
+        <img id="player" class="characters" src="./character_1.gif.crdownload" alt="zając">
+        <img id="coin" class="characters" src="./coin.gif" alt="moneta">
+
+        <div class="instruction">
+            <div class="instruction__close">X</div>
+            <h3 class="instruction__title">Wskazówka:</h3>
+            <p class="instruction__text">Użyj strzałek na klawiaturze oraz spacji, żeby złapać monetę</p>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

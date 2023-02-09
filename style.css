@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(0, 180, 144);
+  background: linear-gradient(0deg, rgb(0, 180, 39) 0%, rgb(19, 255, 137) 76%, rgb(0, 153, 255) 76%);
+  overflow: hidden;
+}
+
+.characters {
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+}
+
+#coin {
+  width: 5vw;
+  z-index: 3;
+}
+
+#player {
+  width: 30vw;
+}
+
+.score-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+  font-size: 2vw;
+  font-family: "Press Start 2P", cursive;
+}
+
+.bush {
+  position: absolute;
+  top: 25vw;
+  right: -20vw;
+  width: 15vw;
+  z-index: 2;
+}
+.bush--first {
+  -webkit-animation: floatingElements 20s infinite 9s linear;
+          animation: floatingElements 20s infinite 9s linear;
+}
+.bush--small {
+  top: 33vw;
+  width: 10vw;
+  -webkit-animation: floatingElements 20s infinite 8s linear;
+          animation: floatingElements 20s infinite 8s linear;
+}
+.bush--last {
+  top: 3vw;
+  width: 19vw;
+  -webkit-animation: floatingElements 20s infinite 18s linear;
+          animation: floatingElements 20s infinite 18s linear;
+}
+
+.clouds {
+  position: absolute;
+  top: 2vw;
+  right: -10vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-animation: floatingElements 20s infinite ease;
+          animation: floatingElements 20s infinite ease;
+}
+.clouds__img {
+  width: 10vw;
+}
+.clouds__img--small {
+  margin-left: 2vw;
+  width: 5vw;
+}
+
+.instruction {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 2vw;
+  right: 2vw;
+  padding: 2vw;
+  max-width: 15vw;
+  font-family: "Unbounded", cursive;
+  text-align: center;
+  border-radius: 1vw;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0.8vw 1vw 1vw rgba(51, 51, 51, 0.411);
+  z-index: 4;
+  -webkit-animation: showInstruction 0.7s forwards;
+          animation: showInstruction 0.7s forwards;
+}
+.instruction__close {
+  align-self: end;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.instruction__close:hover {
+  transform: rotate(180deg);
+}
+.instruction__title {
+  margin: 0.8vw 0;
+  font-size: 1vw;
+}
+.instruction__text {
+  font-size: 0.8vw;
+  font-weight: 200;
+}
+
+@-webkit-keyframes showInstruction {
+  0% {
+    bottom: -10vw;
+  }
+  50% {
+    bottom: 4vw;
+  }
+  100% {
+    bottom: 2vw;
+  }
+}
+
+@keyframes showInstruction {
+  0% {
+    bottom: -10vw;
+  }
+  50% {
+    bottom: 4vw;
+  }
+  100% {
+    bottom: 2vw;
+  }
+}
+@-webkit-keyframes floatingElements {
+  0% {
+    right: -15vw;
+  }
+  100% {
+    right: 100vw;
+  }
+}
+@keyframes floatingElements {
+  0% {
+    right: -15vw;
+  }
+  100% {
+    right: 100vw;
+  }
+}
+@media (max-width: 1051px) {
+  .score-title {
+    font-size: 5vh;
+  }
+  #player {
+    width: 55vh;
+  }
+  #coin {
+    width: 8vh;
+  }
+  .bush--first {
+    right: -30vh;
+    width: 25vh;
+  }
+  .bush--small {
+    top: 40vh;
+    width: 10vh;
+  }
+  .bush--last {
+    top: 10vh;
+    right: -50vh;
+    width: 30vh;
+  }
+  .instruction {
+    padding: 3vh;
+    max-width: 45vh;
+  }
+  .instruction__title, .instruction__close {
+    font-size: 3vh;
+  }
+  .instruction__text {
+    font-size: 2vh;
+  }
+}/*# sourceMappingURL=style.css.map */

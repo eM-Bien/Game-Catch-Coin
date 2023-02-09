@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0, 180, 144);
+    background: linear-gradient(0deg, rgb(0, 180, 39) 0%, rgb(19, 255, 137) 76%, rgb(0, 153, 255) 76%);
+    overflow: hidden;
+}
+
+.characters {
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+}
+
+#coin {
+    width: 5vw;
+    z-index: 3;
+}
+
+#player {
+    width: 30vw;
+}
+
+.score-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+    font-size: 2vw;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.bush {
+    position: absolute;
+    top: 25vw;
+    right: -20vw;
+    width: 15vw;
+    z-index: 2;
+
+    &--first {
+        animation: floatingElements 20s infinite 9s linear;
+    }
+
+    &--small {
+        top: 33vw;
+        width: 10vw;
+        animation: floatingElements 20s infinite 8s linear;
+    }
+
+    &--last {
+        top: 3vw;
+        width: 19vw;
+        animation: floatingElements 20s infinite 18s linear;
+    }
+}
+
+.clouds {
+    position: absolute;
+    top: 2vw;
+    right: -10vw;
+    width: max-content;
+    animation: floatingElements 20s infinite ease;
+
+    &__img {
+        width: 10vw;
+
+        &--small {
+            margin-left: 2vw;
+            width: 5vw;
+        }
+    }
+}
+
+.instruction {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 2vw;
+    right: 2vw;
+    padding: 2vw;
+    max-width: 15vw;
+    font-family: 'Unbounded', cursive;
+    text-align: center;
+    border-radius: 1vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: .8vw 1vw 1vw rgba(51, 51, 51, 0.411);
+    z-index: 4;
+    animation: showInstruction .7s forwards;
+
+    &__close {
+        align-self: end;
+        font-size: 1vw;
+        cursor: pointer;
+        transition: transform .3s;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__title {
+        margin: .8vw 0;
+        font-size: 1vw;
+    }
+
+    &__text {
+        font-size: .8vw;
+        font-weight: 200;
+    }
+}
+
+@keyframes showInstruction {
+    0% {
+        bottom: -10vw;
+    }
+
+    50% {
+        bottom: 4vw;
+    }
+
+    100% {
+        bottom: 2vw;
+    }
+}
+
+@keyframes floatingElements {
+    0% {
+        right: -15vw;
+    }
+
+    100% {
+        right: 100vw;
+    }
+}
+
+@media(max-width: 1051px) {
+    .score-title {
+        font-size: 5vh;
+    }
+
+    #player {
+        width: 55vh;
+    }
+
+    #coin {
+        width: 8vh;
+    }
+
+    .bush--first {
+        right: -30vh;
+        width: 25vh;
+    }
+
+    .bush--small {
+        top: 40vh;
+        width: 10vh;
+    }
+
+    .bush--last {
+        top: 10vh;
+        right: -50vh;
+        width: 30vh;
+    }
+
+    .instruction {
+        padding: 3vh;
+        max-width: 45vh;
+
+        &__title,
+        &__close {
+            font-size: 3vh;
+        }
+
+        &__text {
+            font-size: 2vh;
+        }
+    }
+}
